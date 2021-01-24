@@ -21,11 +21,19 @@ namespace PROJEKAT.controller
             c = pc;
         }
 
-        [Route("Preuzmi")]
+        [Route("PreuzmiProdavnice")]
         [HttpGet]
-        public async Task<JsonResult> Preuzmi()
+        public async Task<JsonResult> PreuzmiProdavnice()
         {
             var p = await c.Prodavnice.Include(p => p.Proizvodi).ToListAsync();
+            return new JsonResult(p);
+        }
+
+        [Route("PreuzmiDobavljace")]
+        [HttpGet]
+        public async Task<JsonResult> PreuzmiDobavljace()
+        {
+            var p = await c.Dobavljaci.Include(p => p.Proizvodi).ToListAsync();
             return new JsonResult(p);
         }
 
