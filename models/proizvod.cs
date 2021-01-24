@@ -11,6 +11,10 @@ namespace PROJEKAT.models
         public int Kolicina { get; set;}
 
         [JsonIgnore]
-        public prodavnicaContext Prodavnica { get; set; }
+        public Prodavnica Prodavnica { get; set; }
+
+        [JsonIgnore]
+        public Dobavljac Dobavljac { get; set; }
+        
     }
 }
