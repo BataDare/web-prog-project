@@ -58,6 +58,6 @@ export class Proizvod
             const domKolicina = red.querySelector(".kolicina");
             domKolicina.innerHTML = this.kolicina;
             }
-        })
+        });
     }
 }
